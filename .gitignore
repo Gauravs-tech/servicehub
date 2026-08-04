@@ -1,0 +1,23 @@
+# IDE
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Build
+target/
+
+# Maven Wrapper JAR (keep wrapper scripts)
+!.mvn/wrapper/maven-wrapper.jar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
