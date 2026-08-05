@@ -1,4 +1,4 @@
-package com.gaurav.servicehub;
+package com.gaurav.servicehub.servicehub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

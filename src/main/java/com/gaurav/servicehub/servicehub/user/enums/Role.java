@@ -1,4 +1,4 @@
-package com.gaurav.servicehub.user.enums;
+package com.gaurav.servicehub.servicehub.user.enums;
 
 public enum Role {
 

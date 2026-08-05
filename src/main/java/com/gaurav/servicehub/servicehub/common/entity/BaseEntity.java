@@ -1,4 +1,4 @@
-package com.gaurav.servicehub.common.entity;
+package com.gaurav.servicehub.servicehub.common.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

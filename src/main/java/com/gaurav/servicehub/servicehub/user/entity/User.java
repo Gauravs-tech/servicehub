@@ -1,8 +1,8 @@
-package com.gaurav.servicehub.user.entity;
+package com.gaurav.servicehub.servicehub.user.entity;
 
-import com.gaurav.servicehub.common.entity.BaseEntity;
-import com.gaurav.servicehub.user.enums.Role;
-import com.gaurav.servicehub.user.enums.UserStatus;
+import com.gaurav.servicehub.servicehub.common.entity.BaseEntity;
+import com.gaurav.servicehub.servicehub.user.enums.Role;
+import com.gaurav.servicehub.servicehub.user.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
