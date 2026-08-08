@@ -11,5 +11,8 @@ public final class ApiPaths {
     public static final String AUTH = API_V1 + "/auth";
     public static final String REGISTER = "/register";
     public static final String LOGIN = "/login";
+    public static final String ME = "/me";
+    public static final String REFRESH = "/refresh";
+    public static final String LOGOUT = "/logout";
 
 }

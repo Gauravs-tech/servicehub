@@ -1,4 +1,4 @@
-package com.gaurav.servicehub.authentication.dto;
+package com.gaurav.servicehub.servicehub.auth.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Getter
 @Builder
-public class RegisterResponse {
+public class CurrentUserResponse {
 
     private UUID id;
 
@@ -18,7 +18,4 @@ public class RegisterResponse {
     private String email;
 
     private String role;
-
-    private String message;
-
 }
