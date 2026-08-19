@@ -2,7 +2,6 @@ package com.gaurav.servicehub.servicehub.auth.mapper;
 
 import com.gaurav.servicehub.servicehub.auth.dto.RegisterRequest;
 import com.gaurav.servicehub.servicehub.auth.dto.RegisterResponse;
-import com.gaurav.servicehub.servicehub.user.enums.Role;
 import com.gaurav.servicehub.servicehub.user.entity.User;
 import com.gaurav.servicehub.servicehub.user.enums.UserStatus;
 
@@ -19,7 +18,7 @@ public final class AuthMapper {
                 .email(request.getEmail())
                 .password(encodedPassword)
                 .phoneNumber(request.getPhoneNumber())
-                .role(Role.CUSTOMER)
+                .role(request.getRole())
                 .status(UserStatus.ACTIVE)
                 .build();
     }

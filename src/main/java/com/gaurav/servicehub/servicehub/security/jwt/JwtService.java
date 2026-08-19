@@ -19,6 +19,7 @@ public class JwtService {
             @Value("${jwt.secret}") String secret,
             @Value("${jwt.expiration}") long expiration
     ) {
+
         this.secretKey = Keys.hmacShaKeyFor(
                 secret.getBytes(StandardCharsets.UTF_8)
         );
@@ -58,6 +59,26 @@ public class JwtService {
                 .getSubject();
     }
 
+    public String extractEmail(String token) {
+
+        return Jwts.parser()
+                .verifyWith(secretKey)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload()
+                .get("email", String.class);
+    }
+
+    public String extractRole(String token) {
+
+        return Jwts.parser()
+                .verifyWith(secretKey)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload()
+                .get("role", String.class);
+    }
+
     public boolean isTokenValid(String token) {
 
         try {
@@ -75,3 +96,4 @@ public class JwtService {
         }
     }
 }
+

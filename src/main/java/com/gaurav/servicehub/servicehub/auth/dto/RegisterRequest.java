@@ -1,9 +1,7 @@
 package com.gaurav.servicehub.servicehub.auth.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import com.gaurav.servicehub.servicehub.user.enums.Role;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -36,5 +34,9 @@ public class RegisterRequest {
             regexp = "^[6-9]\\d{9}$",
             message = "Invalid Indian phone number"
     )
+
     private String phoneNumber;
+
+    @NotNull
+    private Role role;
 }
