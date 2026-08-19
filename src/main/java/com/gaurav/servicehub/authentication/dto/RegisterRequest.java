@@ -1,4 +1,4 @@
-package com.gaurav.servicehub.servicehub.auth.dto;
+package com.gaurav.servicehub.authentication.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

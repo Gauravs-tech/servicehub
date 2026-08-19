@@ -5,7 +5,8 @@
 # VS Code
 .vscode/
 
-
+# Build
+target/
 
 # Maven Wrapper JAR (keep wrapper scripts)
 !.mvn/wrapper/maven-wrapper.jar
