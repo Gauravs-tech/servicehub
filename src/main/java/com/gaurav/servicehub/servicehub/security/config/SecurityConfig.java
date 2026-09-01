@@ -93,66 +93,63 @@ public class SecurityConfig {
                         // ==================================
                         // CUSTOMER BOOKING CREATION
                         // ==================================
-                        .requestMatchers(
-                                HttpMethod.POST,
-                                ApiPaths.BOOKINGS
-                        ).hasRole("CUSTOMER")
+                                .requestMatchers(
+                                        HttpMethod.POST,
+                                        ApiPaths.BOOKINGS
+                                ).hasRole("CUSTOMER")
+
+                                .requestMatchers(
+                                        HttpMethod.GET,
+                                        ApiPaths.BOOKINGS + "/customer/**"
+                                ).hasRole("CUSTOMER")
+
+                                .requestMatchers(
+                                        HttpMethod.PUT,
+                                        ApiPaths.BOOKINGS + "/{bookingId}/cancel"
+                                ).hasRole("CUSTOMER")
 
 
                         // ==================================
                         // PROVIDER VIEW BOOKINGS
                         // ==================================
-                        .requestMatchers(
-                                HttpMethod.GET,
-                                ApiPaths.BOOKINGS + "/provider"
-                        ).hasRole("PROVIDER")
-
-
-                        // ==================================
-                        // PROVIDER ACCEPT BOOKING
-                        // ==================================
-                        .requestMatchers(
-                                HttpMethod.PUT,
-                                ApiPaths.BOOKINGS + "/*/accept"
-                        ).hasRole("PROVIDER")
-
-                                // ==========================================
-                                // PROVIDER REJECT BOOKING
-                                // ==========================================
                                 .requestMatchers(
-                                        HttpMethod.PUT,
-                                        ApiPaths.BOOKINGS + "/*/reject"
+                                        HttpMethod.GET,
+                                        ApiPaths.BOOKINGS + "/provider"
                                 ).hasRole("PROVIDER")
 
-                        .requestMatchers(
-                                HttpMethod.PUT,
-                                ApiPaths.BOOKINGS + "/*/complete"
-                        ).hasRole("PROVIDER")
+                                .requestMatchers(
+                                        HttpMethod.PUT,
+                                        ApiPaths.BOOKINGS + "/{bookingId}/accept"
+                                ).hasRole("PROVIDER")
 
+                                .requestMatchers(
+                                        HttpMethod.PUT,
+                                        ApiPaths.BOOKINGS + "/{bookingId}/reject"
+                                ).hasRole("PROVIDER")
 
-                        // ==================================
-                        // CUSTOMER VIEW BOOKINGS
-                        // ==================================
-                        .requestMatchers(
-                                HttpMethod.GET,
-                                ApiPaths.BOOKINGS + "/customer"
-                        ).hasRole("CUSTOMER")
+                                .requestMatchers(
+                                        HttpMethod.PUT,
+                                        ApiPaths.BOOKINGS + "/{bookingId}/complete"
+                                ).hasRole("PROVIDER")
 
+                                // ==========================================
+// REVIEW APIs
+// ==========================================
 
-                        .requestMatchers(
-                                HttpMethod.GET,
-                                ApiPaths.BOOKINGS + "/customer/**"
-                        ).hasRole("CUSTOMER")
+                                .requestMatchers(
+                                        HttpMethod.POST,
+                                        ApiPaths.REVIEWS
+                                ).hasRole("CUSTOMER")
 
+                                .requestMatchers(
+                                        HttpMethod.GET,
+                                        ApiPaths.REVIEWS + "/provider/**"
+                                ).permitAll()
 
-                        // ==================================
-                        // CUSTOMER CANCEL BOOKING
-                        // ==================================
-                        .requestMatchers(
-                                HttpMethod.PUT,
-                                ApiPaths.BOOKINGS + "/*/cancel"
-                        ).hasRole("CUSTOMER")
-
+                                .requestMatchers(
+                                        HttpMethod.GET,
+                                        ApiPaths.REVIEWS + "/my"
+                                ).hasRole("CUSTOMER")
 
                         // ==================================
                         // EVERYTHING ELSE
